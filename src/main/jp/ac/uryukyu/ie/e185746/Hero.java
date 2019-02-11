@@ -1,4 +1,4 @@
-package jp.ac.uryukyu.ie.tnal;
+package jp.ac.uryukyu.ie.e185746;
 
 /**
  * ヒーロークラス。
@@ -18,10 +18,10 @@ public class Hero extends LivingThing {
     boolean dead;*/
     @Override
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint < 0 ) {
-            dead = true;
-            System.out.printf("勇者%sは倒れた。\n", name);
+        setHitPoint(getHitPoint() - damage);
+        if( getHitPoint() < 0 ) {
+            setDead(true);
+            System.out.printf("勇者%sは倒れた。\n", getName());
         }
     }
 }
